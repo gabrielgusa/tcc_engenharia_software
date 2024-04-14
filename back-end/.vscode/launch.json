@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "UserManagementApplication",
+            "request": "launch",
+            "mainClass": "br.com.findfoodtosave.usermanagement.UserManagementApplication",
+            "vmArgs": "-Dspring.profiles.active=local"
+        },
+        {
+            "type": "java",
+            "name": "StoreManagementApplication",
+            "request": "launch",
+            "mainClass": "br.com.findfoodtosave.storemanagement.StoreManagementApplication",
+            "projectName": "store-management",
+            "vmArgs": "-Dspring.profiles.active=local"
+        },
+        {
+            "type": "java",
+            "name": "ProductManagementApplication",
+            "request": "launch",
+            "mainClass": "br.com.findfoodtosave.productmanagement.ProductManagementApplication",
+            "projectName": "product-management",
+            "vmArgs": "-Dspring.profiles.active=local"
+        },
+        {
+            "type": "java",
+            "name": "GatewayApplication",
+            "request": "launch",
+            "mainClass": "br.com.findfoodtosave.gateway.GatewayApplication",
+            "projectName": "gateway",
+            "vmArgs": "-Dspring.profiles.active=local"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+
+feign:
+  autoconfiguration:
+    jackson:
+      enabled: true
+
+back-end:
+  api-user:
+    uri: http://api-user:8081
+  api-store:
+    uri: http://api-store:8082
+  api-product:
+    uri: http://api-product:8083

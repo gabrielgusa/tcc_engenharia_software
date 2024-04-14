@@ -1,0 +1,21 @@
+server:
+  port: 8082
+  
+spring:
+  application:
+    name: store-management
+  
+  datasource:
+    url: jdbc:h2:mem:store-db
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+
+  h2:
+    console:
+      enabled: true

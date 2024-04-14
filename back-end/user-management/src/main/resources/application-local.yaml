@@ -1,0 +1,26 @@
+server:
+  port: 8081
+  
+spring:
+  application:
+    name: user-management
+
+  datasource:
+    url: jdbc:h2:mem:user-db
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+  
+  h2:
+    console:
+      enabled: true
+
+security:
+  jwt:
+    secret-key: cag2zRaIN5fI9OwZS0tZ84GdLgnQGI4hkqO9Srhj5PPFssw1LKWK/+aFEoLUfzQMN1H32ofe7Mpzk/Y5gl2YVw==
+    expiration-time: 180000 # 3 minutes

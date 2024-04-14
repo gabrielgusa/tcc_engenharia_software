@@ -1,0 +1,217 @@
+<html>
+    <head>
+        <style>
+            .navbar {
+                overflow: hidden;
+                background-color: #333;
+            }
+        
+            .navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+        
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+        
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+        
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: grey;
+            }
+        
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+        
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            #app {
+                margin: auto;
+                width: 70%;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            
+            input[type=text], input[type=email],
+                input[type=password], select, textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+            }
+
+            input[type=time], input[type=date] {
+                width: 30%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+            }
+            
+            label {
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+            }
+            
+            button[type=submit] {
+                background-color: #04AA6D;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: right;
+            }
+            
+            button[type=submit]:hover {
+                background-color: #45a049;
+            }
+            
+            .container {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+            
+            .col-25 {
+                float: left;
+                width: 25%;
+                margin-top: 6px;
+            }
+            
+            .col-75 {
+                float: left;
+                width: 75%;
+                margin-top: 6px;
+            }
+            
+            /* Clear floats after the columns */
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+                .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+                }
+            }
+
+            #custom-table {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            #custom-table td, #custom-table th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            
+            #custom-table tr:nth-child(even){background-color: #f2f2f2;}
+            
+            #custom-table tr:hover {background-color: #ddd;}
+            
+            #custom-table th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #333;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1 style="text-align: center;">Find Food to Save</h1>
+            <div class="navbar">
+                <a href="../index.html">Home</a>
+                <a href="../user/cadastrar.html">Cadastrar</a>
+                <a href="../user/login.html">Login</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Estabelecimento</button>
+                    <div class="dropdown-content">
+                        <a href="../store/form.html">Cadastrar</a>
+                        <a href="../store/form.html">Atualizar</a>
+                        <a href="../store/search.html">Procurar</a>
+                        <a href="../store/delete.html">Excluir</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Produto</button>
+                    <div class="dropdown-content">
+                        <a href="./form.html">Cadastrar</Link>
+                        <a href="./list.html">Listar</a>
+                    </div>
+                </div>
+            </div>
+
+            <table id="custom-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data de validade</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Marmita</td>
+                        <td>16/04/2024</td>
+                        <td>19</td>
+                        <td>
+                            <a href="./form_update.html" style="text-decoration: none; color: blue; padding-right: 40%;">atualizar</a>
+                            <a href="./list.html" style="text-decoration: none; color: blue;">remover</a>
+                        </td>  
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </body>
+</html>

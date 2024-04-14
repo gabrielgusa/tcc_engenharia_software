@@ -1,0 +1,22 @@
+server:
+  port: 8081
+  
+spring:
+  application:
+    name: user-management
+  
+  datasource:
+    url: jdbc:mysql://mysql:3306/findfoodtosave?useSSL=false
+    username: findfoodtosave
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: create-drop
+
+security:
+  jwt:
+    secret-key: cag2zRaIN5fI9OwZS0tZ84GdLgnQGI4hkqO9Srhj5PPFssw1LKWK/+aFEoLUfzQMN1H32ofe7Mpzk/Y5gl2YVw==
+    expiration-time: 900000 # 15 minutes

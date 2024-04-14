@@ -1,0 +1,95 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.0.0
+    networks:
+      - app_network
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=findfoodtosave
+      - MYSQL_USER=findfoodtosave
+      - MYSQL_PASSWORD=12345
+      - MYSQL_ROOT_HOST='172.18.0.1'
+
+  api-user:
+    build:
+      context: ../back-end/user-management/
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8081
+    volumes:
+      - ./maven_m2:/root/.m2
+    networks:
+      - app_network
+    depends_on:
+      - mysql
+      - api-gateway
+
+  api-store:
+    build:
+      context: ../back-end/store-management/
+      dockerfile: Dockerfile
+    ports:
+      - 8082:8082
+    volumes:
+      - ./maven_m2:/root/.m2
+    networks:
+      - app_network
+    depends_on:
+      - mysql
+      - api-gateway
+
+  api-product:
+    build:
+      context: ../back-end/product-management/
+      dockerfile: Dockerfile
+    ports:
+      - 8083:8083
+    volumes:
+      - ./maven_m2:/root/.m2
+    networks:
+      - app_network
+    depends_on:
+      - mysql
+      - api-gateway
+  
+  api-gateway:
+    build:
+      context: ../back-end/gateway/
+      dockerfile: Dockerfile
+    ports:
+      - 8084:8084
+    volumes:
+      - ./maven_m2:/root/.m2
+    networks:
+      - app_network
+    depends_on:
+      - mysql
+
+  app-front:
+    build:
+      context: ../front-end/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    networks:
+      - app_network
+    depends_on:
+      - mysql
+      - api-gateway
+
+  app-prototype:
+    build:
+      context: ../prototipo
+      dockerfile: Dockerfile
+    ports:
+      - 81:80
+    networks:
+      - app_network
+    depends_on:
+      - mysql
+      - api-gateway
+  
+networks:
+  app_network:

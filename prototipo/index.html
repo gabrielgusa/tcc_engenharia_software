@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <style>
+            .navbar {
+                overflow: hidden;
+                background-color: #333;
+            }
+        
+            .navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+        
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+        
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+        
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: grey;
+            }
+        
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+        
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            #app {
+                margin: auto;
+                width: 70%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1 style="text-align: center;">Find Food to Save</h1>
+            <div class="navbar">
+                <a href="./index.html">Home</a>
+                <a href="./user/cadastrar.html">Cadastrar</a>
+                <a href="./user/login.html">Login</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Estabelecimento</button>
+                    <div class="dropdown-content">
+                        <a href="./store/form.html">Cadastrar</a>
+                        <a href="./store/form.html">Atualizar</a>
+                        <a href="./store/search.html">Procurar</a>
+                        <a href="./store/delete.html">Excluir</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Produto</button>
+                    <div class="dropdown-content">
+                        <a href="./product/form.html">Cadastrar</Link>
+                        <a href="./product/list.html">Listar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Bem vindo!</p>
+        </div>
+
+    </body>
+</html>
